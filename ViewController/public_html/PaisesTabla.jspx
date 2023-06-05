@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:table value="#{bindings.PaisesVO1.collectionModel}" var="row"
+                        rows="#{bindings.PaisesVO1.rangeSize}"
+                        emptyText="#{bindings.PaisesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.PaisesVO1.rangeSize}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.PaisesVO1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.PaisesVO1.collectionModel.makeCurrent}"
+                        rowSelection="single" id="t1" width="465">
+                <af:column sortProperty="#{bindings.PaisesVO1.hints.CountryId.name}"
+                           sortable="false"
+                           headerText="#{bindings.PaisesVO1.hints.CountryId.label}"
+                           id="c2">
+                  <af:inputText value="#{row.bindings.CountryId.inputValue}"
+                                label="#{bindings.PaisesVO1.hints.CountryId.label}"
+                                required="#{bindings.PaisesVO1.hints.CountryId.mandatory}"
+                                columns="#{bindings.PaisesVO1.hints.CountryId.displayWidth}"
+                                maximumLength="#{bindings.PaisesVO1.hints.CountryId.precision}"
+                                shortDesc="#{bindings.PaisesVO1.hints.CountryId.tooltip}"
+                                id="it2">
+                    <f:validator binding="#{row.bindings.CountryId.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.PaisesVO1.hints.CountryName.name}"
+                           sortable="false"
+                           headerText="#{bindings.PaisesVO1.hints.CountryName.label}"
+                           id="c1">
+                  <af:inputText value="#{row.bindings.CountryName.inputValue}"
+                                label="#{bindings.PaisesVO1.hints.CountryName.label}"
+                                required="#{bindings.PaisesVO1.hints.CountryName.mandatory}"
+                                columns="#{bindings.PaisesVO1.hints.CountryName.displayWidth}"
+                                maximumLength="#{bindings.PaisesVO1.hints.CountryName.precision}"
+                                shortDesc="#{bindings.PaisesVO1.hints.CountryName.tooltip}"
+                                id="it3">
+                    <f:validator binding="#{row.bindings.CountryName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.PaisesVO1.hints.RegionId.name}"
+                           sortable="false"
+                           headerText="#{bindings.PaisesVO1.hints.RegionId.label}"
+                           id="c3">
+                  <af:inputText value="#{row.bindings.RegionId.inputValue}"
+                                label="#{bindings.PaisesVO1.hints.RegionId.label}"
+                                required="#{bindings.PaisesVO1.hints.RegionId.mandatory}"
+                                columns="#{bindings.PaisesVO1.hints.RegionId.displayWidth}"
+                                maximumLength="#{bindings.PaisesVO1.hints.RegionId.precision}"
+                                shortDesc="#{bindings.PaisesVO1.hints.RegionId.tooltip}"
+                                id="it1">
+                    <f:validator binding="#{row.bindings.RegionId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.PaisesVO1.hints.RegionId.format}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl2">
+              <af:commandButton text="Nuevo Pais" id="cb2" action="NuevoPais"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

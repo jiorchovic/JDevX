@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">empTable</property>
+      <property
+         name="page">/empTable.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>empTable&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">167.29883</property>
+      <property
+         name="x">147.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="taskFlowId">NewEmpTaskFlow</property>
+      <property
+         name="activityId">NewEmpTaskFlow</property>
+      <property
+         name="documentReference">/WEB-INF/NewEmpTaskFlow.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>NewEmpTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">161.09766</property>
+      <property
+         name="x">324.00977</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">newEmp</property>
+      <property
+         name="sdm:polyPoints">R50,188.0,166.94824,283.00977,160.74707,L50</property>
+   </ControlFlowCase>
+</SDM>

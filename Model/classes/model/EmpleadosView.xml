@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpleadosView"
+  Version="11.1.1.66.73"
+  InheritPersonalization="merge"
+  SelectList="Empleados.EMPLEADOID, 
+       Empleados.NOMBRE, 
+       Empleados.APELLIDO, 
+       Empleados.FECHA_NAC, 
+       Empleados.REPORTA_A, 
+       Empleados.EXTENSION, 
+       Empleados.DIVISA"
+  FromList="EMPLEADOS Empleados"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Empleados"
+    Entity="model.Empleados"/>
+  <ViewAttribute
+    Name="Empleadoid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Empleadoid"
+    EntityUsage="Empleados"
+    AliasName="EMPLEADOID"/>
+  <ViewAttribute
+    Name="Nombre"
+    PrecisionRule="true"
+    EntityAttrName="Nombre"
+    EntityUsage="Empleados"
+    AliasName="NOMBRE"/>
+  <ViewAttribute
+    Name="Apellido"
+    PrecisionRule="true"
+    EntityAttrName="Apellido"
+    EntityUsage="Empleados"
+    AliasName="APELLIDO"/>
+  <ViewAttribute
+    Name="FechaNac"
+    PrecisionRule="true"
+    EntityAttrName="FechaNac"
+    EntityUsage="Empleados"
+    AliasName="FECHA_NAC"/>
+  <ViewAttribute
+    Name="ReportaA"
+    PrecisionRule="true"
+    EntityAttrName="ReportaA"
+    EntityUsage="Empleados"
+    AliasName="REPORTA_A"/>
+  <ViewAttribute
+    Name="Extension"
+    PrecisionRule="true"
+    EntityAttrName="Extension"
+    EntityUsage="Empleados"
+    AliasName="EXTENSION"/>
+  <ViewAttribute
+    Name="Divisa"
+    PrecisionRule="true"
+    EntityAttrName="Divisa"
+    EntityUsage="Empleados"
+    AliasName="DIVISA"/>
+</ViewObject>

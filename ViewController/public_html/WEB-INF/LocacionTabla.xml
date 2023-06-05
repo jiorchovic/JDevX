@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="LocTabla">
+    <page>/LocTabla.jspx</page>
+  </view>
+  <task-flow-call id="LocacionesTF">
+    <task-flow-reference>
+      <document>/WEB-INF/LocacionesTF.xml</document>
+      <id>LocacionesTF</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule id="__6">
+    <from-activity-id id="__7">LocTabla</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome id="__10">NuevaLocacion</from-outcome>
+      <to-activity-id id="__8">LocacionesTF</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

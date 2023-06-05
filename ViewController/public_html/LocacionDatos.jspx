@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                 id="tbb1"/>
+              <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.City.inputValue}"
+                              label="#{bindings.City.hints.label}"
+                              required="#{bindings.City.hints.mandatory}"
+                              columns="#{bindings.City.hints.displayWidth}"
+                              maximumLength="#{bindings.City.hints.precision}"
+                              shortDesc="#{bindings.City.hints.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{bindings.City.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.CountryId.inputValue}"
+                              label="#{bindings.CountryId.hints.label}"
+                              required="#{bindings.CountryId.hints.mandatory}"
+                              columns="#{bindings.CountryId.hints.displayWidth}"
+                              maximumLength="#{bindings.CountryId.hints.precision}"
+                              shortDesc="#{bindings.CountryId.hints.tooltip}"
+                              id="it5">
+                  <f:validator binding="#{bindings.CountryId.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.LocationId.inputValue}"
+                              label="#{bindings.LocationId.hints.label}"
+                              required="#{bindings.LocationId.hints.mandatory}"
+                              columns="#{bindings.LocationId.hints.displayWidth}"
+                              maximumLength="#{bindings.LocationId.hints.precision}"
+                              shortDesc="#{bindings.LocationId.hints.tooltip}"
+                              id="it6">
+                  <f:validator binding="#{bindings.LocationId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.LocationId.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.PostalCode.inputValue}"
+                              label="#{bindings.PostalCode.hints.label}"
+                              required="#{bindings.PostalCode.hints.mandatory}"
+                              columns="#{bindings.PostalCode.hints.displayWidth}"
+                              maximumLength="#{bindings.PostalCode.hints.precision}"
+                              shortDesc="#{bindings.PostalCode.hints.tooltip}"
+                              id="it3">
+                  <f:validator binding="#{bindings.PostalCode.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.StateProvince.inputValue}"
+                              label="#{bindings.StateProvince.hints.label}"
+                              required="#{bindings.StateProvince.hints.mandatory}"
+                              columns="#{bindings.StateProvince.hints.displayWidth}"
+                              maximumLength="#{bindings.StateProvince.hints.precision}"
+                              shortDesc="#{bindings.StateProvince.hints.tooltip}"
+                              id="it1">
+                  <f:validator binding="#{bindings.StateProvince.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.StreetAddress.inputValue}"
+                              label="#{bindings.StreetAddress.hints.label}"
+                              required="#{bindings.StreetAddress.hints.mandatory}"
+                              columns="#{bindings.StreetAddress.hints.displayWidth}"
+                              maximumLength="#{bindings.StreetAddress.hints.precision}"
+                              shortDesc="#{bindings.StreetAddress.hints.tooltip}"
+                              id="it4">
+                  <f:validator binding="#{bindings.StreetAddress.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                      id="t1"/>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

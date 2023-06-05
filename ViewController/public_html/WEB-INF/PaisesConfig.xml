@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="PaisesTabla">
+    <page>/PaisesTabla.jspx</page>
+  </view>
+  <task-flow-call id="PaisesTF">
+    <task-flow-reference>
+      <document>/WEB-INF/PaisesTF.xml</document>
+      <id>PaisesTF</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">PaisesTabla</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome id="__5">NuevoPais</from-outcome>
+      <to-activity-id id="__3">PaisesTF</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

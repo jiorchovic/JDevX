@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.66.73" id="clTablePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClientesVO1" RangeSize="25"
+              DataControl="HrAppModuleDataControl" id="ClientesVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ClientesVO1Iterator" id="ClientesVO1">
+      <nodeDefinition DefName="model.ClientesVO" Name="ClientesVO10">
+        <AttrNames>
+          <Item Value="Clienteid"/>
+          <Item Value="CedulaRuc"/>
+          <Item Value="Nombrecia"/>
+          <Item Value="Nombrecontacto"/>
+          <Item Value="Direccioncli"/>
+          <Item Value="Fax"/>
+          <Item Value="Email"/>
+          <Item Value="Celular"/>
+          <Item Value="Fijo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ClientesVO1Iterator" id="ClientesVO11">
+      <nodeDefinition DefName="model.ClientesVO" Name="ClientesVO110">
+        <AttrNames>
+          <Item Value="Clienteid"/>
+          <Item Value="CedulaRuc"/>
+          <Item Value="Nombrecia"/>
+          <Item Value="Nombrecontacto"/>
+          <Item Value="Direccioncli"/>
+          <Item Value="Fax"/>
+          <Item Value="Email"/>
+          <Item Value="Celular"/>
+          <Item Value="Fijo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

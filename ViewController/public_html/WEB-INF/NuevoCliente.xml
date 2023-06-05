@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="NuevoCliente">
+    <default-activity id="__1">CreateInsert</default-activity>
+    <transaction id="__21">
+      <new-transaction/>
+    </transaction>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__2">
+        <fixed-outcome>nuevoCliente</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="Principal">
+      <page>/Principal.jspx</page>
+      <train-stop id="__3">
+        <display-name id="__31">Principal</display-name>
+      </train-stop>
+    </view>
+    <view id="Secundario">
+      <page>/Secundario.jspx</page>
+      <train-stop id="__4">
+        <display-name id="__32">Secundario</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="commit">
+      <outcome id="__5">
+        <name>commit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="rollback">
+      <outcome id="__6">
+        <name>rollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <view id="Resumen">
+      <page>/Resumen.jspx</page>
+      <train-stop id="__22">
+        <display-name id="__33">Resumen</display-name>
+      </train-stop>
+    </view>
+    <train/>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__16">CreateInsert</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome id="__19">nuevoCliente</from-outcome>
+        <to-activity-id id="__17">Principal</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id id="__24">Resumen</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome id="__26">Ok</from-outcome>
+        <to-activity-id id="__27">commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__28">
+        <from-outcome id="__29">Undo</from-outcome>
+        <to-activity-id id="__30">rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

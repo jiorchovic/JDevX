@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                 id="tbb1"/>
+              <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.CedulaRuc.inputValue}"
+                              label="#{bindings.CedulaRuc.hints.label}"
+                              required="#{bindings.CedulaRuc.hints.mandatory}"
+                              columns="#{bindings.CedulaRuc.hints.displayWidth}"
+                              maximumLength="#{bindings.CedulaRuc.hints.precision}"
+                              shortDesc="#{bindings.CedulaRuc.hints.tooltip}"
+                              id="it5">
+                  <f:validator binding="#{bindings.CedulaRuc.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Nombrecia.inputValue}"
+                              label="#{bindings.Nombrecia.hints.label}"
+                              required="#{bindings.Nombrecia.hints.mandatory}"
+                              columns="#{bindings.Nombrecia.hints.displayWidth}"
+                              maximumLength="#{bindings.Nombrecia.hints.precision}"
+                              shortDesc="#{bindings.Nombrecia.hints.tooltip}"
+                              id="it1">
+                  <f:validator binding="#{bindings.Nombrecia.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Nombrecontacto.inputValue}"
+                              label="#{bindings.Nombrecontacto.hints.label}"
+                              required="#{bindings.Nombrecontacto.hints.mandatory}"
+                              columns="#{bindings.Nombrecontacto.hints.displayWidth}"
+                              maximumLength="#{bindings.Nombrecontacto.hints.precision}"
+                              shortDesc="#{bindings.Nombrecontacto.hints.tooltip}"
+                              id="it4">
+                  <f:validator binding="#{bindings.Nombrecontacto.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Direccioncli.inputValue}"
+                              label="#{bindings.Direccioncli.hints.label}"
+                              required="#{bindings.Direccioncli.hints.mandatory}"
+                              columns="#{bindings.Direccioncli.hints.displayWidth}"
+                              maximumLength="#{bindings.Direccioncli.hints.precision}"
+                              shortDesc="#{bindings.Direccioncli.hints.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{bindings.Direccioncli.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Fax.inputValue}"
+                              label="#{bindings.Fax.hints.label}"
+                              required="#{bindings.Fax.hints.mandatory}"
+                              columns="#{bindings.Fax.hints.displayWidth}"
+                              maximumLength="#{bindings.Fax.hints.precision}"
+                              shortDesc="#{bindings.Fax.hints.tooltip}"
+                              id="it3">
+                  <f:validator binding="#{bindings.Fax.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                      id="t1"/>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

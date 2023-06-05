@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                 id="tbb1"/>
+              <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.Empleadoid.inputValue}"
+                              label="#{bindings.Empleadoid.hints.label}"
+                              required="#{bindings.Empleadoid.hints.mandatory}"
+                              columns="#{bindings.Empleadoid.hints.displayWidth}"
+                              maximumLength="#{bindings.Empleadoid.hints.precision}"
+                              shortDesc="#{bindings.Empleadoid.hints.tooltip}"
+                              id="it6">
+                  <f:validator binding="#{bindings.Empleadoid.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Empleadoid.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Nombre.inputValue}"
+                              label="#{bindings.Nombre.hints.label}"
+                              required="#{bindings.Nombre.hints.mandatory}"
+                              columns="#{bindings.Nombre.hints.displayWidth}"
+                              maximumLength="#{bindings.Nombre.hints.precision}"
+                              shortDesc="#{bindings.Nombre.hints.tooltip}"
+                              id="it5">
+                  <f:validator binding="#{bindings.Nombre.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.FechaNac.inputValue}"
+                              label="#{bindings.FechaNac.hints.label}"
+                              required="#{bindings.FechaNac.hints.mandatory}"
+                              shortDesc="#{bindings.FechaNac.hints.tooltip}"
+                              id="id1">
+                  <f:validator binding="#{bindings.FechaNac.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.FechaNac.format}"/>
+                </af:inputDate>
+                <af:inputText value="#{bindings.ReportaA.inputValue}"
+                              label="#{bindings.ReportaA.hints.label}"
+                              required="#{bindings.ReportaA.hints.mandatory}"
+                              columns="#{bindings.ReportaA.hints.displayWidth}"
+                              maximumLength="#{bindings.ReportaA.hints.precision}"
+                              shortDesc="#{bindings.ReportaA.hints.tooltip}"
+                              id="it3">
+                  <f:validator binding="#{bindings.ReportaA.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.ReportaA.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Extension.inputValue}"
+                              label="#{bindings.Extension.hints.label}"
+                              required="#{bindings.Extension.hints.mandatory}"
+                              columns="#{bindings.Extension.hints.displayWidth}"
+                              maximumLength="#{bindings.Extension.hints.precision}"
+                              shortDesc="#{bindings.Extension.hints.tooltip}"
+                              id="it4">
+                  <f:validator binding="#{bindings.Extension.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Extension.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Divisa.inputValue}"
+                              label="#{bindings.Divisa.hints.label}"
+                              required="#{bindings.Divisa.hints.mandatory}"
+                              columns="#{bindings.Divisa.hints.displayWidth}"
+                              maximumLength="#{bindings.Divisa.hints.precision}"
+                              shortDesc="#{bindings.Divisa.hints.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{bindings.Divisa.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Divisa.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Apellido.inputValue}"
+                              label="#{bindings.Apellido.hints.label}"
+                              required="#{bindings.Apellido.hints.mandatory}"
+                              columns="#{bindings.Apellido.hints.displayWidth}"
+                              maximumLength="#{bindings.Apellido.hints.precision}"
+                              shortDesc="#{bindings.Apellido.hints.tooltip}"
+                              id="it1">
+                  <f:validator binding="#{bindings.Apellido.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                      id="t1"/>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

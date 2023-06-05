@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.66.73" id="EmpleadosViewPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpleadosView1" RangeSize="25"
+              DataControl="HrAppModuleDataControl" id="EmpleadosView1Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmpleadosView1Iterator" id="Empleadoid">
+      <AttrNames>
+        <Item Value="Empleadoid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpleadosView1Iterator" id="Nombre">
+      <AttrNames>
+        <Item Value="Nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpleadosView1Iterator" id="Apellido">
+      <AttrNames>
+        <Item Value="Apellido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpleadosView1Iterator" id="FechaNac">
+      <AttrNames>
+        <Item Value="FechaNac"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpleadosView1Iterator" id="ReportaA">
+      <AttrNames>
+        <Item Value="ReportaA"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpleadosView1Iterator" id="Extension">
+      <AttrNames>
+        <Item Value="Extension"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpleadosView1Iterator" id="Divisa">
+      <AttrNames>
+        <Item Value="Divisa"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmpleadosView1Iterator" id="First"
+            RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="EmpleadosView1Iterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="EmpleadosView1Iterator" id="Next"
+            RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="EmpleadosView1Iterator" id="Last"
+            RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

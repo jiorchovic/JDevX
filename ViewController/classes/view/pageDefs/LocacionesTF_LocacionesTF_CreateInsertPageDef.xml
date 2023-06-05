@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.66.73"
+                id="LocacionesTF_LocacionesTF_CreateInsertPageDef"
+                Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="LocacionesVO1" RangeSize="25"
+              DataControl="HrAppModuleDataControl" id="LocacionesVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="LocacionesVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

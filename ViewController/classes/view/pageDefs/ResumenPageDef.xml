@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.66.73" id="ResumenPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClientesVO1" RangeSize="25"
+              DataControl="HrAppModuleDataControl" id="ClientesVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Clienteid">
+      <AttrNames>
+        <Item Value="Clienteid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="CedulaRuc">
+      <AttrNames>
+        <Item Value="CedulaRuc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Nombrecia">
+      <AttrNames>
+        <Item Value="Nombrecia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Nombrecontacto">
+      <AttrNames>
+        <Item Value="Nombrecontacto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Direccioncli">
+      <AttrNames>
+        <Item Value="Direccioncli"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Fax">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Celular">
+      <AttrNames>
+        <Item Value="Celular"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesVO1Iterator" id="Fijo">
+      <AttrNames>
+        <Item Value="Fijo"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

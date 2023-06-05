@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="PaisesTF">
+    <default-activity id="__1">CreateInsert</default-activity>
+    <transaction id="__20">
+      <new-transaction/>
+    </transaction>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__2">
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="Datos">
+      <page>/PaisesDatos.jspx</page>
+      <train-stop id="__3">
+        <display-name id="__21">Datos</display-name>
+      </train-stop>
+    </view>
+    <view id="Review">
+      <page>/PaisesReview.jspx</page>
+      <train-stop id="__4">
+        <description id="__22">Review</description>
+      </train-stop>
+    </view>
+    <task-flow-return id="Commit">
+      <outcome id="__5">
+        <name>Commit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Rollback">
+      <outcome id="__6">
+        <name>Rollback</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">Review</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome id="__11">Ok</from-outcome>
+        <to-activity-id id="__9">Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome id="__14">Undo</from-outcome>
+        <to-activity-id id="__12">Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__16">CreateInsert</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome id="__17">CreateInsert</from-outcome>
+        <to-activity-id id="__18">Datos</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

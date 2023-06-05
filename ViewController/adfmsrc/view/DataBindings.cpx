@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.66.73" id="DataBindings" SeparateXMLFiles="false"
+             Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/EmpleadosView.jsff" usageId="view_EmpleadosViewPageDef"/>
+    <page path="/EmpleadosView.jsp" usageId="view_EmpleadosViewPageDef1"/>
+    <page path="/Clientes.jsff" usageId="view_ClientesPageDef"/>
+    <page path="/Clientes.jsp" usageId="view_ClientesPageDef1"/>
+    <page path="/ClientesVO.jsff" usageId="view_ClientesVOPageDef"/>
+    <page path="/ClientesVO.jsp" usageId="view_ClientesVOPageDef1"/>
+    <page path="/WEB-INF/NewEmpTaskFlow.xml#NewEmpTaskFlow@CreateInsert"
+          usageId="view_NewEmpTaskFlow_NewEmpTaskFlow_CreateInsertPageDef"/>
+    <page path="/Contact.jspx" usageId="view_ContactPageDef"/>
+    <page path="/Salary.jspx" usageId="view_SalaryPageDef"/>
+    <page path="/OtherInfo.jspx" usageId="view_OtherInfoPageDef"/>
+    <page path="/Review.jspx" usageId="view_ReviewPageDef"/>
+    <page path="/empTable.jspx" usageId="view_empTablePageDef"/>
+    <page path="PageFlow#CreateInsert"
+          usageId="view_NuevoClienteTF___CreateInsertPageDef"/>
+    <page path="/WEB-INF/NuevoCliente.xml#NuevoCliente@CreateInsert"
+          usageId="view_NuevoCliente_NuevoCliente_CreateInsertPageDef"/>
+    <page path="/Principal.jspx" usageId="view_PrincipalPageDef"/>
+    <page path="/Secundario.jspx" usageId="view_SecundarioPageDef"/>
+    <page path="/Resumen.jspx" usageId="view_ResumenPageDef"/>
+    <page path="/clTable.jspx" usageId="view_clTablePageDef"/>
+    <page path="/WEB-INF/LocacionesTF.xml#LocacionesTF@CreateInsert"
+          usageId="view_LocacionesTF_LocacionesTF_CreateInsertPageDef"/>
+    <page path="/LocacionDatos.jspx" usageId="view_LocacionDatosPageDef"/>
+    <page path="/LocacionReview.jspx" usageId="view_LocacionReviewPageDef"/>
+    <page path="/LocTabla.jspx" usageId="view_LocTablaPageDef"/>
+    <page path="/WEB-INF/PaisesTF.xml#PaisesTF@CreateInsert"
+          usageId="view_PaisesTF_PaisesTF_CreateInsertPageDef"/>
+    <page path="/PaisesDatos.jspx" usageId="view_PaisesDatosPageDef"/>
+    <page path="/PaisesReview.jspx" usageId="view_PaisesReviewPageDef"/>
+    <page path="/PaisesTabla.jspx" usageId="view_PaisesTablaPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_EmpleadosViewPageDef"
+          path="view.pageDefs.EmpleadosViewPageDef"/>
+    <page id="view_EmpleadosViewPageDef1"
+          path="view.pageDefs.EmpleadosViewPageDef1"/>
+    <page id="view_ClientesPageDef" path="view.pageDefs.ClientesPageDef"/>
+    <page id="view_ClientesPageDef1" path="view.pageDefs.ClientesPageDef1"/>
+    <page id="view_ClientesVOPageDef" path="view.pageDefs.ClientesVOPageDef"/>
+    <page id="view_ClientesVOPageDef1" path="view.pageDefs.ClientesVOPageDef1"/>
+    <page id="view_NewEmpTaskFlow_NewEmpTaskFlow_CreateInsertPageDef"
+          path="view.pageDefs.NewEmpTaskFlow_NewEmpTaskFlow_CreateInsertPageDef"/>
+    <page id="view_ContactPageDef" path="view.pageDefs.ContactPageDef"/>
+    <page id="view_SalaryPageDef" path="view.pageDefs.SalaryPageDef"/>
+    <page id="view_OtherInfoPageDef" path="view.pageDefs.OtherInfoPageDef"/>
+    <page id="view_ReviewPageDef" path="view.pageDefs.ReviewPageDef"/>
+    <page id="view_empTablePageDef" path="view.pageDefs.empTablePageDef"/>
+    <page id="view_NuevoClienteTF___CreateInsertPageDef"
+          path="view.pageDefs.NuevoClienteTF___CreateInsertPageDef"/>
+    <page id="view_NuevoCliente_NuevoCliente_CreateInsertPageDef"
+          path="view.pageDefs.NuevoCliente_NuevoCliente_CreateInsertPageDef"/>
+    <page id="view_PrincipalPageDef" path="view.pageDefs.PrincipalPageDef"/>
+    <page id="view_SecundarioPageDef" path="view.pageDefs.SecundarioPageDef"/>
+    <page id="view_ResumenPageDef" path="view.pageDefs.ResumenPageDef"/>
+    <page id="view_clTablePageDef" path="view.pageDefs.clTablePageDef"/>
+    <page id="view_LocacionesTF_LocacionesTF_CreateInsertPageDef"
+          path="view.pageDefs.LocacionesTF_LocacionesTF_CreateInsertPageDef"/>
+    <page id="view_LocacionDatosPageDef"
+          path="view.pageDefs.LocacionDatosPageDef"/>
+    <page id="view_LocacionReviewPageDef"
+          path="view.pageDefs.LocacionReviewPageDef"/>
+    <page id="view_LocTablaPageDef" path="view.pageDefs.LocTablaPageDef"/>
+    <page id="view_PaisesTF_PaisesTF_CreateInsertPageDef"
+          path="view.pageDefs.PaisesTF_PaisesTF_CreateInsertPageDef"/>
+    <page id="view_PaisesDatosPageDef" path="view.pageDefs.PaisesDatosPageDef"/>
+    <page id="view_PaisesReviewPageDef"
+          path="view.pageDefs.PaisesReviewPageDef"/>
+    <page id="view_PaisesTablaPageDef" path="view.pageDefs.PaisesTablaPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="HrAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

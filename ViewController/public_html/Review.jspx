@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:panelFormLayout id="pfl1">
+                <af:panelLabelAndMessage label="#{bindings.Empleadoid.hints.label}"
+                                         id="plam3">
+                  <af:outputText value="#{bindings.Empleadoid.inputValue}"
+                                 id="ot2">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.Empleadoid.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.Nombre.hints.label}"
+                                         id="plam4">
+                  <af:outputText value="#{bindings.Nombre.inputValue}"
+                                 id="ot4"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.Apellido.hints.label}"
+                                         id="plam2">
+                  <af:outputText value="#{bindings.Apellido.inputValue}"
+                                 id="ot5"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.FechaNac.hints.label}"
+                                         id="plam1">
+                  <af:outputText value="#{bindings.FechaNac.inputValue}"
+                                 id="ot6">
+                    <af:convertDateTime pattern="#{bindings.FechaNac.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.ReportaA.hints.label}"
+                                         id="plam6">
+                  <af:outputText value="#{bindings.ReportaA.inputValue}"
+                                 id="ot7">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.ReportaA.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.Extension.hints.label}"
+                                         id="plam7">
+                  <af:outputText value="#{bindings.Extension.inputValue}"
+                                 id="ot1">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.Extension.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.Divisa.hints.label}"
+                                         id="plam5">
+                  <af:outputText value="#{bindings.Divisa.inputValue}" id="ot3">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.Divisa.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+              <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                 id="tbb1"/>
+              <af:panelGroupLayout id="pgl2">
+                <af:commandButton text="Guardar" id="cb1" action="ok"/>
+                <af:commandButton text="Cancelar" id="cb2" action="Undo"/>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                      id="t1"/>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

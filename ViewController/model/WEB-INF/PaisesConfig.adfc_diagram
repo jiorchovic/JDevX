@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">PaisesTabla</property>
+      <property
+         name="page">/PaisesTabla.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PaisesTabla&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">137.44238</property>
+      <property
+         name="x">73.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="taskFlowId">PaisesTF</property>
+      <property
+         name="activityId">PaisesTF</property>
+      <property
+         name="documentReference">/WEB-INF/PaisesTF.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PaisesTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">125.69531</property>
+      <property
+         name="x">272.5</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">NuevoPais</property>
+      <property
+         name="sdm:polyPoints">R50,114.0,137.0918,231.5,125.34473,L50</property>
+   </ControlFlowCase>
+</SDM>

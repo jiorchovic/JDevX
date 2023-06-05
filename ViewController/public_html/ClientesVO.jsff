@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="pfl1">
+    <af:inputText value="#{bindings.Clienteid.inputValue}"
+                  label="#{bindings.Clienteid.hints.label}"
+                  required="#{bindings.Clienteid.hints.mandatory}"
+                  columns="#{bindings.Clienteid.hints.displayWidth}"
+                  maximumLength="#{bindings.Clienteid.hints.precision}"
+                  shortDesc="#{bindings.Clienteid.hints.tooltip}" id="it1">
+      <f:validator binding="#{bindings.Clienteid.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.Clienteid.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.CedulaRuc.inputValue}"
+                  label="#{bindings.CedulaRuc.hints.label}"
+                  required="#{bindings.CedulaRuc.hints.mandatory}"
+                  columns="#{bindings.CedulaRuc.hints.displayWidth}"
+                  maximumLength="#{bindings.CedulaRuc.hints.precision}"
+                  shortDesc="#{bindings.CedulaRuc.hints.tooltip}" id="it7">
+      <f:validator binding="#{bindings.CedulaRuc.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Nombrecia.inputValue}"
+                  label="#{bindings.Nombrecia.hints.label}"
+                  required="#{bindings.Nombrecia.hints.mandatory}"
+                  columns="#{bindings.Nombrecia.hints.displayWidth}"
+                  maximumLength="#{bindings.Nombrecia.hints.precision}"
+                  shortDesc="#{bindings.Nombrecia.hints.tooltip}" id="it4">
+      <f:validator binding="#{bindings.Nombrecia.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Nombrecontacto.inputValue}"
+                  label="#{bindings.Nombrecontacto.hints.label}"
+                  required="#{bindings.Nombrecontacto.hints.mandatory}"
+                  columns="#{bindings.Nombrecontacto.hints.displayWidth}"
+                  maximumLength="#{bindings.Nombrecontacto.hints.precision}"
+                  shortDesc="#{bindings.Nombrecontacto.hints.tooltip}" id="it3">
+      <f:validator binding="#{bindings.Nombrecontacto.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Direccioncli.inputValue}"
+                  label="#{bindings.Direccioncli.hints.label}"
+                  required="#{bindings.Direccioncli.hints.mandatory}"
+                  columns="#{bindings.Direccioncli.hints.displayWidth}"
+                  maximumLength="#{bindings.Direccioncli.hints.precision}"
+                  shortDesc="#{bindings.Direccioncli.hints.tooltip}" id="it8">
+      <f:validator binding="#{bindings.Direccioncli.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Fax.inputValue}"
+                  label="#{bindings.Fax.hints.label}"
+                  required="#{bindings.Fax.hints.mandatory}"
+                  columns="#{bindings.Fax.hints.displayWidth}"
+                  maximumLength="#{bindings.Fax.hints.precision}"
+                  shortDesc="#{bindings.Fax.hints.tooltip}" id="it2">
+      <f:validator binding="#{bindings.Fax.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Email.inputValue}"
+                  label="#{bindings.Email.hints.label}"
+                  required="#{bindings.Email.hints.mandatory}"
+                  columns="#{bindings.Email.hints.displayWidth}"
+                  maximumLength="#{bindings.Email.hints.precision}"
+                  shortDesc="#{bindings.Email.hints.tooltip}" id="it5">
+      <f:validator binding="#{bindings.Email.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Celular.inputValue}"
+                  label="#{bindings.Celular.hints.label}"
+                  required="#{bindings.Celular.hints.mandatory}"
+                  columns="#{bindings.Celular.hints.displayWidth}"
+                  maximumLength="#{bindings.Celular.hints.precision}"
+                  shortDesc="#{bindings.Celular.hints.tooltip}" id="it9">
+      <f:validator binding="#{bindings.Celular.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Fijo.inputValue}"
+                  label="#{bindings.Fijo.hints.label}"
+                  required="#{bindings.Fijo.hints.mandatory}"
+                  columns="#{bindings.Fijo.hints.displayWidth}"
+                  maximumLength="#{bindings.Fijo.hints.precision}"
+                  shortDesc="#{bindings.Fijo.hints.tooltip}" id="it6">
+      <f:validator binding="#{bindings.Fijo.validator}"/>
+    </af:inputText>
+    <f:facet name="footer">
+      <af:panelGroupLayout layout="horizontal" id="pgl1">
+        <af:commandButton actionListener="#{bindings.First.execute}"
+                          text="First" disabled="#{!bindings.First.enabled}"
+                          partialSubmit="true" id="cb3"/>
+        <af:commandButton actionListener="#{bindings.Previous.execute}"
+                          text="Previous"
+                          disabled="#{!bindings.Previous.enabled}"
+                          partialSubmit="true" id="cb1"/>
+        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                          disabled="#{!bindings.Next.enabled}"
+                          partialSubmit="true" id="cb2"/>
+        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                          disabled="#{!bindings.Last.enabled}"
+                          partialSubmit="true" id="cb4"/>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelFormLayout>
+  <af:table value="#{bindings.ClientesVO1.collectionModel}" var="row"
+            rows="#{bindings.ClientesVO1.rangeSize}"
+            emptyText="#{bindings.ClientesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            fetchSize="#{bindings.ClientesVO1.rangeSize}"
+            rowBandingInterval="0" id="t1"
+            partialTriggers="::cb3 ::cb1 ::cb2 ::cb4">
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Clienteid.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Clienteid.label}"
+               id="c4">
+      <af:inputText value="#{row.bindings.Clienteid.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Clienteid.label}"
+                    required="#{bindings.ClientesVO1.hints.Clienteid.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Clienteid.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Clienteid.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Clienteid.tooltip}"
+                    id="it14">
+        <f:validator binding="#{row.bindings.Clienteid.validator}"/>
+        <af:convertNumber groupingUsed="false"
+                          pattern="#{bindings.ClientesVO1.hints.Clienteid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.CedulaRuc.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.CedulaRuc.label}"
+               id="c2">
+      <af:inputText value="#{row.bindings.CedulaRuc.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.CedulaRuc.label}"
+                    required="#{bindings.ClientesVO1.hints.CedulaRuc.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.CedulaRuc.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.CedulaRuc.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.CedulaRuc.tooltip}"
+                    id="it12">
+        <f:validator binding="#{row.bindings.CedulaRuc.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Nombrecia.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Nombrecia.label}"
+               id="c6">
+      <af:inputText value="#{row.bindings.Nombrecia.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Nombrecia.label}"
+                    required="#{bindings.ClientesVO1.hints.Nombrecia.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Nombrecia.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Nombrecia.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Nombrecia.tooltip}"
+                    id="it10">
+        <f:validator binding="#{row.bindings.Nombrecia.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Nombrecontacto.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Nombrecontacto.label}"
+               id="c1">
+      <af:inputText value="#{row.bindings.Nombrecontacto.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Nombrecontacto.label}"
+                    required="#{bindings.ClientesVO1.hints.Nombrecontacto.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Nombrecontacto.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Nombrecontacto.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Nombrecontacto.tooltip}"
+                    id="it18">
+        <f:validator binding="#{row.bindings.Nombrecontacto.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Direccioncli.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Direccioncli.label}"
+               id="c9">
+      <af:inputText value="#{row.bindings.Direccioncli.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Direccioncli.label}"
+                    required="#{bindings.ClientesVO1.hints.Direccioncli.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Direccioncli.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Direccioncli.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Direccioncli.tooltip}"
+                    id="it16">
+        <f:validator binding="#{row.bindings.Direccioncli.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Fax.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Fax.label}" id="c7">
+      <af:inputText value="#{row.bindings.Fax.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Fax.label}"
+                    required="#{bindings.ClientesVO1.hints.Fax.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Fax.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Fax.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Fax.tooltip}"
+                    id="it11">
+        <f:validator binding="#{row.bindings.Fax.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Email.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Email.label}" id="c3">
+      <af:inputText value="#{row.bindings.Email.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Email.label}"
+                    required="#{bindings.ClientesVO1.hints.Email.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Email.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Email.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Email.tooltip}"
+                    id="it15">
+        <f:validator binding="#{row.bindings.Email.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Celular.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Celular.label}" id="c8">
+      <af:inputText value="#{row.bindings.Celular.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Celular.label}"
+                    required="#{bindings.ClientesVO1.hints.Celular.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Celular.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Celular.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Celular.tooltip}"
+                    id="it17">
+        <f:validator binding="#{row.bindings.Celular.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.ClientesVO1.hints.Fijo.name}"
+               sortable="false"
+               headerText="#{bindings.ClientesVO1.hints.Fijo.label}" id="c5">
+      <af:inputText value="#{row.bindings.Fijo.inputValue}"
+                    label="#{bindings.ClientesVO1.hints.Fijo.label}"
+                    required="#{bindings.ClientesVO1.hints.Fijo.mandatory}"
+                    columns="#{bindings.ClientesVO1.hints.Fijo.displayWidth}"
+                    maximumLength="#{bindings.ClientesVO1.hints.Fijo.precision}"
+                    shortDesc="#{bindings.ClientesVO1.hints.Fijo.tooltip}"
+                    id="it13">
+        <f:validator binding="#{row.bindings.Fijo.validator}"/>
+      </af:inputText>
+    </af:column>
+  </af:table>
+</jsp:root>

@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">clTable</property>
+      <property
+         name="page">/clTable.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>clTable&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">143.29883</property>
+      <property
+         name="x">90.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="taskFlowId">NuevoCliente</property>
+      <property
+         name="activityId">NuevoCliente</property>
+      <property
+         name="documentReference">/WEB-INF/NuevoCliente.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>NuevoCliente&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">131.39648</property>
+      <property
+         name="x">341.0205</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">nuevoCliente</property>
+      <property
+         name="sdm:polyPoints">R50,131.0,142.94824,300.0205,131.0459,L50</property>
+   </ControlFlowCase>
+</SDM>

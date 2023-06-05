@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="NewEmpTaskFlow">
+    <default-activity id="__1">CreateInsert</default-activity>
+    <transaction id="__22">
+      <new-transaction/>
+    </transaction>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__2">
+        <fixed-outcome>newEmp</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="Contact">
+      <page>/Contact.jspx</page>
+      <train-stop id="__3">
+        <display-name id="__23">Contacto</display-name>
+      </train-stop>
+    </view>
+    <view id="Salary">
+      <page>/Salary.jspx</page>
+      <train-stop id="__4">
+        <display-name id="__24">Salary</display-name>
+      </train-stop>
+    </view>
+    <view id="OtherInfo">
+      <page>/OtherInfo.jspx</page>
+      <train-stop id="__5">
+        <display-name id="__25">Other</display-name>
+      </train-stop>
+    </view>
+    <view id="Review">
+      <page>/Review.jspx</page>
+      <train-stop id="__6">
+        <display-name id="__26">Review</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="commit">
+      <display-name id="__13">commit</display-name>
+      <outcome id="__12">
+        <name id="__14">commit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="rollback">
+      <display-name id="__17">rollback</display-name>
+      <outcome id="__15">
+        <name id="__16">rollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">CreateInsert</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__10">newEmp</from-outcome>
+        <to-activity-id id="__11">Contact</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id id="__19">Review</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome id="__27">ok</from-outcome>
+        <to-activity-id id="__21">commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__28">
+        <from-outcome id="__30">undo</from-outcome>
+        <to-activity-id id="__29">rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

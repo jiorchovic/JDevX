@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.HrAppModule">
+      <AppModuleConfig name="1887933B74B" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DBconnection="java:comp/env/jdbc/HRDS" IsLazyLoadingTrue="true" JDBCName="HR" jbo.project="model.Model" BC4JConfigName="HrAppModuleLocal" DeployPlatform="LOCAL" ApplicationName="model.HrAppModule">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Oracle"/>
+         <Security AppModuleJndiName="model.HrAppModule"/>
+         <Tester FullProxyInterfaceName="model.common.HrAppModule"/>
+         <Custom LastUsedConfiguration="HrAppModuleLocal" JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

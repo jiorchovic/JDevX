@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                 id="tbb1"/>
+              <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.Clienteid.inputValue}"
+                              label="#{bindings.Clienteid.hints.label}"
+                              required="#{bindings.Clienteid.hints.mandatory}"
+                              columns="#{bindings.Clienteid.hints.displayWidth}"
+                              maximumLength="#{bindings.Clienteid.hints.precision}"
+                              shortDesc="#{bindings.Clienteid.hints.tooltip}"
+                              id="it3">
+                  <f:validator binding="#{bindings.Clienteid.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Clienteid.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Email.inputValue}"
+                              label="#{bindings.Email.hints.label}"
+                              required="#{bindings.Email.hints.mandatory}"
+                              columns="#{bindings.Email.hints.displayWidth}"
+                              maximumLength="#{bindings.Email.hints.precision}"
+                              shortDesc="#{bindings.Email.hints.tooltip}"
+                              id="it1">
+                  <f:validator binding="#{bindings.Email.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Celular.inputValue}"
+                              label="#{bindings.Celular.hints.label}"
+                              required="#{bindings.Celular.hints.mandatory}"
+                              columns="#{bindings.Celular.hints.displayWidth}"
+                              maximumLength="#{bindings.Celular.hints.precision}"
+                              shortDesc="#{bindings.Celular.hints.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{bindings.Celular.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Fijo.inputValue}"
+                              label="#{bindings.Fijo.hints.label}"
+                              required="#{bindings.Fijo.hints.mandatory}"
+                              columns="#{bindings.Fijo.hints.displayWidth}"
+                              maximumLength="#{bindings.Fijo.hints.precision}"
+                              shortDesc="#{bindings.Fijo.hints.tooltip}"
+                              id="it4">
+                  <f:validator binding="#{bindings.Fijo.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                      id="t1"/>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

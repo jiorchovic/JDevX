@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:table value="#{bindings.ClientesVO11.collectionModel}" var="row"
+                      rows="#{bindings.ClientesVO11.rangeSize}"
+                      emptyText="#{bindings.ClientesVO11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.ClientesVO11.rangeSize}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.ClientesVO11.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.ClientesVO11.collectionModel.makeCurrent}"
+                      rowSelection="single" id="t1">
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Clienteid.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Clienteid.label}"
+                         id="c7">
+                <af:outputText value="#{row.Clienteid}" id="ot6">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.ClientesVO11.hints.Clienteid.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.CedulaRuc.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.CedulaRuc.label}"
+                         id="c4">
+                <af:outputText value="#{row.CedulaRuc}" id="ot5"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Nombrecia.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Nombrecia.label}"
+                         id="c6">
+                <af:outputText value="#{row.Nombrecia}" id="ot1"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Nombrecontacto.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Nombrecontacto.label}"
+                         id="c9">
+                <af:outputText value="#{row.Nombrecontacto}" id="ot7"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Direccioncli.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Direccioncli.label}"
+                         id="c2">
+                <af:outputText value="#{row.Direccioncli}" id="ot4"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Fax.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Fax.label}"
+                         id="c8">
+                <af:outputText value="#{row.Fax}" id="ot3"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Email.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Email.label}"
+                         id="c3">
+                <af:outputText value="#{row.Email}" id="ot8"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Celular.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Celular.label}"
+                         id="c1">
+                <af:outputText value="#{row.Celular}" id="ot9"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.ClientesVO11.hints.Fijo.name}"
+                         sortable="false"
+                         headerText="#{bindings.ClientesVO11.hints.Fijo.label}"
+                         id="c5">
+                <af:outputText value="#{row.Fijo}" id="ot2"/>
+              </af:column>
+            </af:table>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl1">
+              <af:commandButton text="Nuevo Cliente" id="cb1"
+                                action="nuevoCliente"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
